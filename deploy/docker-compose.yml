@@ -1,0 +1,13 @@
+services:
+  notifications-service:
+    user: root
+    container_name: notifications
+    build:
+      context: ../
+      dockerfile: ./deploy/Dockerfile
+    networks:
+      - notifications-network
+
+networks:
+  notifications-network:
+    driver: bridge
